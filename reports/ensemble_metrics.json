@@ -1,0 +1,28 @@
+{
+  "classes": ["Light", "Medium", "Dark"],
+  "models": [
+    {
+      "path": "src/coffee_roast_group_model.keras",
+      "weight": 0.45
+    },
+    {
+      "path": "src/coffee_roast_real_group_model.keras",
+      "weight": 0.55
+    }
+  ],
+  "single_bean_test": {
+    "images": 300,
+    "accuracy": 0.9433333333,
+    "confusion_matrix": [[99, 1, 0], [2, 98, 0], [0, 14, 86]]
+  },
+  "source_held_out_real_group_test": {
+    "images": 720,
+    "accuracy": 0.8819444444,
+    "confusion_matrix": [[158, 81, 1], [3, 237, 0], [0, 0, 240]]
+  },
+  "attached_example": {
+    "prediction": "Medium (57.09%)",
+    "warm_inference_median_ms": 263.1,
+    "warm_inference_max_ms_over_10_runs": 281.3
+  }
+}

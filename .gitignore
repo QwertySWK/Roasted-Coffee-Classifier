@@ -17,3 +17,7 @@ Thumbs.db
 datasets/*.zip
 datasets/train
 datasets/test
+datasets/grouped
+datasets/grouped-preview
+datasets/real-groups
+datasets/real-group-crops
