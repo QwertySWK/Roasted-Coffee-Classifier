@@ -26,8 +26,10 @@ def parse_args() -> argparse.Namespace:
 
 
 def single_source_splits(source: Path, class_name: str, seed: int) -> dict[str, list[Path]]:
-    train_files = sorted((source / "train" / class_name).glob("*.png"))
-    test_files = sorted((source / "test" / class_name).glob("*.png"))
+    train_files = sorted(p for p in (source / "train" / class_name).glob('*')
+                         if p.is_file() and p.suffix.lower() in {'.png', '.jpg', '.jpeg'})
+    test_files = sorted(p for p in (source / "test" / class_name).glob('*')
+                        if p.is_file() and p.suffix.lower() in {'.png', '.jpg', '.jpeg'})
     rng = random.Random(f"{seed}-{class_name}")
     rng.shuffle(train_files)
     val_count = max(1, round(len(train_files) * 0.2))

@@ -5,7 +5,16 @@
 - Source: https://www.kaggle.com/datasets/gpiosenka/coffee-bean-dataset-resized-224-x-224
 - Original research: https://arxiv.org/abs/2206.01841
 - License: CC BY-SA 4.0
-- Classes used here: Light, Medium, Dark
+- Output classes: Light, Medium, Dark. For the requested combined task,
+  Light includes both original Green (unroasted) and Light (light roast).
+  Original source labels and folders remain unchanged.
+
+Run `python scripts/prepare_merged_dataset.py` to prepare
+`datasets/merged/train` and `datasets/merged/test` from the original four
+classes. The notebook uses this merged dataset. Run
+`python scripts/retrain_pipeline.py` to retrain both deployed models and
+export their TensorFlow Lite files, then restart the app. Existing weights
+do not implement the combined class until retraining finishes.
 
 The downloaded source images are excluded from Git. Run
 `scripts/generate_group_dataset.py` after placing the Kaggle dataset under

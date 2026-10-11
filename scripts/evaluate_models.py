@@ -38,6 +38,8 @@ def load_images(data: Path, prefix: str | None) -> tuple[np.ndarray, np.ndarray]
                 image = ImageOps.exif_transpose(opened).convert("RGB").resize((224, 224))
             images.append(np.asarray(image, dtype=np.float32))
             labels.append(label)
+        if not files:
+            raise ValueError(f"No matching images for {class_name} in {data} (prefix={prefix!r})")
     return np.asarray(images), np.asarray(labels)
 
 
