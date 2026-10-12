@@ -1,0 +1,190 @@
+{
+  "classes": [
+    "Light",
+    "Medium",
+    "Dark"
+  ],
+  "dataset": "datasets\\Coffee Bean Roast.v2i.folder",
+  "split_policy": "train/valid/test directories; Green excluded from roasted classes",
+  "head_history": {
+    "accuracy": [
+      0.6800976991653442,
+      0.8787139058113098,
+      0.9271469116210938,
+      0.9556369781494141,
+      0.9580789804458618
+    ],
+    "loss": [
+      0.7825759053230286,
+      0.3220897614955902,
+      0.21427294611930847,
+      0.148553267121315,
+      0.1314021795988083
+    ],
+    "val_accuracy": [
+      0.695852518081665,
+      0.7188940048217773,
+      0.6589861512184143,
+      0.6728110313415527,
+      0.6820276379585266
+    ],
+    "val_loss": [
+      0.5572739243507385,
+      0.5115033388137817,
+      0.6366077065467834,
+      0.6268607378005981,
+      0.6553347706794739
+    ]
+  },
+  "fine_tune_history": {
+    "accuracy": [
+      0.7281237244606018,
+      0.906796932220459
+    ],
+    "loss": [
+      0.8888160586357117,
+      0.25660789012908936
+    ],
+    "val_accuracy": [
+      0.8294931054115295,
+      0.9032257795333862
+    ],
+    "val_loss": [
+      0.36340993642807007,
+      0.23439091444015503
+    ]
+  },
+  "keras_test": {
+    "confusion_matrix": [
+      [
+        34,
+        3,
+        0
+      ],
+      [
+        0,
+        32,
+        0
+      ],
+      [
+        0,
+        10,
+        36
+      ]
+    ],
+    "classification_report": {
+      "Light": {
+        "precision": 1.0,
+        "recall": 0.918918918918919,
+        "f1-score": 0.9577464788732394,
+        "support": 37.0
+      },
+      "Medium": {
+        "precision": 0.7111111111111111,
+        "recall": 1.0,
+        "f1-score": 0.8311688311688312,
+        "support": 32.0
+      },
+      "Dark": {
+        "precision": 1.0,
+        "recall": 0.782608695652174,
+        "f1-score": 0.8780487804878049,
+        "support": 46.0
+      },
+      "accuracy": 0.8869565217391304,
+      "macro avg": {
+        "precision": 0.9037037037037038,
+        "recall": 0.9005092048570309,
+        "f1-score": 0.8889880301766251,
+        "support": 115.0
+      },
+      "weighted avg": {
+        "precision": 0.9196135265700484,
+        "recall": 0.8869565217391304,
+        "f1-score": 0.8906457932013172,
+        "support": 115.0
+      }
+    }
+  },
+  "tflite_test": {
+    "confusion_matrix": [
+      [
+        36,
+        1,
+        0
+      ],
+      [
+        0,
+        32,
+        0
+      ],
+      [
+        0,
+        9,
+        37
+      ]
+    ],
+    "classification_report": {
+      "Light": {
+        "precision": 1.0,
+        "recall": 0.972972972972973,
+        "f1-score": 0.9863013698630136,
+        "support": 37.0
+      },
+      "Medium": {
+        "precision": 0.7619047619047619,
+        "recall": 1.0,
+        "f1-score": 0.8648648648648649,
+        "support": 32.0
+      },
+      "Dark": {
+        "precision": 1.0,
+        "recall": 0.8043478260869565,
+        "f1-score": 0.891566265060241,
+        "support": 46.0
+      },
+      "accuracy": 0.9130434782608695,
+      "macro avg": {
+        "precision": 0.9206349206349206,
+        "recall": 0.9257735996866433,
+        "f1-score": 0.9142441665960398,
+        "support": 115.0
+      },
+      "weighted avg": {
+        "precision": 0.9337474120082816,
+        "recall": 0.9130434782608695,
+        "f1-score": 0.9146163004641588,
+        "support": 115.0
+      }
+    },
+    "input": {
+      "shape": [
+        1,
+        224,
+        224,
+        3
+      ],
+      "dtype": "uint8",
+      "quantization": [
+        1.0,
+        0
+      ]
+    },
+    "output": {
+      "shape": [
+        1,
+        3
+      ],
+      "dtype": "uint8",
+      "quantization": [
+        0.00390625,
+        0
+      ]
+    }
+  },
+  "artifacts": {
+    "keras": "src\\coffee_roast_rpi.keras",
+    "tflite": "src\\coffee_roast_rpi_int8.tflite",
+    "labels": "src\\coffee_roast_labels.json"
+  }
+}

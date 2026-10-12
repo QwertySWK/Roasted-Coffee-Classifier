@@ -14,6 +14,7 @@ env/
 Thumbs.db
 
 # Data files
+datasets
 datasets/*.zip
 datasets/train
 datasets/test
@@ -21,3 +22,4 @@ datasets/grouped
 datasets/grouped-preview
 datasets/real-groups
 datasets/real-group-crops
+datasetes/Coffee Bean Roast.v2i.folder
