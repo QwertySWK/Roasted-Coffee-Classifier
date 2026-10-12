@@ -1,0 +1,4 @@
+ai-edge-litert
+numpy
+paho-mqtt>=2.0
+Pillow
